@@ -1,9 +1,25 @@
-.latest h1 {
-  border-top: 5px solid #000;
+h1.EK-latest-header {
+  border-top: 3px solid #000;
   padding-top: 10px;
+  color: #2B2B2B;
+  font-size: 16px;
 }
 
-.latest a:hover{
-  decoration: none;
+a.EK-latest-header {
+  text-decoration: none !important;
+  color: #2B2B2B !important;
+}
+
+a.EK-latest-header:hover {
+  color: #41A62A !important;
+}
+
+div.EK-latest-title {
+  text-align: left;
+  font-size: 12px;
+}
+
+div.EK-latest-content {
+  padding-bottom: 10px;
 }
 

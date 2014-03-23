@@ -41,18 +41,34 @@ function get_latest_posts_in_cat($atts)
 
   $recent_posts = wp_get_recent_posts( $args );
  
+  echo '<div class="EK-latest-title">' . $category . '</div>';
+
   foreach( $recent_posts as $post)
   {
     echo '<header>' 
-         . '<h1 class="entry-title latest"><a class="latest" rel="bookmark" href="' . get_permalink($post["ID"]) . '" title="Artikel <'.esc_attr($post["post_title"]).'> anschauen" >' .   $post["post_title"].'</a></h1>' 
+         . '<h1 class="EK-latest-header"><a class="EK-latest-header" rel="bookmark" href="' . get_permalink($post["ID"]) . '" title="Artikel <'.esc_attr($post["post_title"]).'> anschauen" >' .   $post["post_title"].'</a></h1>' 
          . '</header>'
-         . '<div>'
+         . '<div class="EK-latest-content">'
          . $post["post_content"] 
          . '</div>';
   }
 
-  echo '<a href="' . get_category_link(get_cat_id($category)) . '">Weitere Beiträge ' . $category . '</a>';
+  echo '<hr />'
+       .  '<a href="' . get_category_link(get_cat_id($category)) . '">Weitere Beiträge ' . $category . '</a>'
+       . '<hr />';
 }
 add_shortcode('EK_latest_posts_in_cat','get_latest_posts_in_cat');
+
+
+add_action( 'wp_enqueue_scripts', 'register_plugin_styles' );
+
+/**
+ * Register style sheet.
+  */
+function register_plugin_styles() 
+{
+  wp_register_style( 'EK-shortcodes', plugins_url( 'EK-shortcodes/css/EK-styles.css' ) );
+  wp_enqueue_style( 'EK-shortcodes' );
+}
 
 ?>
