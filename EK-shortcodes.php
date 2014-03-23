@@ -40,12 +40,18 @@ function get_latest_posts_in_cat($atts)
     'post_status' => 'publish');
 
   $recent_posts = wp_get_recent_posts( $args );
-  echo '<h1>Recent Posts ' . $category . '</h1><hr />';
  
   foreach( $recent_posts as $post)
   {
-    echo '<h1 class="entry-title"><a rel="bookmark" href="' . get_permalink($post["ID"]) . '" title="Look '.esc_attr($post["post_title"]).'" >' .   $post["post_title"].'</a></h1>' . $post["post_content"] . ' <hr />';
+    echo '<header>' 
+         . '<h1 class="entry-title latest"><a class="latest" rel="bookmark" href="' . get_permalink($post["ID"]) . '" title="Artikel <'.esc_attr($post["post_title"]).'> anschauen" >' .   $post["post_title"].'</a></h1>' 
+         . '</header>'
+         . '<div>'
+         . $post["post_content"] 
+         . '</div>';
   }
+
+  echo '<a href="' . get_category_link(get_cat_id($category)) . '">Weitere Beiträge ' . $category . '</a>';
 }
 add_shortcode('EK_latest_posts_in_cat','get_latest_posts_in_cat');
 
