@@ -1,0 +1,9 @@
+.latest h1 {
+  border-top: 5px solid #000;
+  padding-top: 10px;
+}
+
+.latest a:hover{
+  decoration: none;
+}
+
