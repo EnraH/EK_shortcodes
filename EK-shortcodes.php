@@ -49,7 +49,7 @@ function get_latest_posts_in_cat($atts)
          . '<h1 class="EK-latest-header"><a class="EK-latest-header" rel="bookmark" href="' . get_permalink($post["ID"]) . '" title="Artikel <'.esc_attr($post["post_title"]).'> anschauen" >' .   $post["post_title"].'</a></h1>' 
          . '</header>'
          . '<div class="EK-latest-content">'
-         . $post["post_content"] 
+         . apply_filters('the_content', $post["post_content"])
          . '</div>';
   }
 
