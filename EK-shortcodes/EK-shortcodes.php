@@ -27,6 +27,19 @@ function add_contact($atts)
 }
 add_shortcode('EK_add_contact','add_contact');
 
+function add_detailed_contact($atts, $content)
+{
+  extract(shortcode_atts(array(
+    'name' => 'No Name given',
+    'pos' => '',
+    'tel' => '',
+    'img_id' => '',
+  ), $atts));
+
+  
+}
+add_shortcode('EK_add_detailed_contact','')
+
 function get_latest_posts_in_cat($atts)
 {
   extract(shortcode_atts(array(
