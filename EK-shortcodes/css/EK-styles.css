@@ -25,7 +25,9 @@ div.EK-latest-content {
 
 div.EK-detailed-contact {
   padding: 10px;
+  position: absolute;
+  right: -10px;
   border: 1.5px solid #000;
-  float: right;
-  width:300px;
+  width: 200px;
+  float:right;
 }
