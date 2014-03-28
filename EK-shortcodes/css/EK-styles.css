@@ -24,8 +24,8 @@ div.EK-latest-content {
 }
 
 div.EK-detailed-contact {
-  padding: 10pt;
-  //position
-  border-top: 1.5px solid #000;
-  border-bottom: 1.5px solid #000;
+  padding: 10px;
+  border: 1.5px solid #000;
+  float: right;
+  width:300px;
 }
