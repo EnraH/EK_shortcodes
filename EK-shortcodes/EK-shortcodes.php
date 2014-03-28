@@ -27,7 +27,7 @@ function add_contact($atts)
 }
 add_shortcode('EK_add_contact','add_contact');
 
-function add_detailed_contact($atts, $content)
+function add_detailed_contact($atts, $content = null)
 {
   extract(shortcode_atts(array(
     'name' => 'No Name given',
@@ -40,10 +40,10 @@ function add_detailed_contact($atts, $content)
   {
     return($name);
   } else {
-    return '<div id="Contact_Details_' . str_replace(' ', '_', $name) . '" class="EK_detailed_contact">'
+    return '<div id="Contact_Details_' . str_replace(' ', '_', $name) . '" class="EK-detailed-contact">'
       . get_image_tag($img_id,$name,$name, 'left', 'thumbnail') 
       . '<em>' . $pos. '</em><br />' 
-      . $name . '<br />'
+      . '<strong>' . $name . '</strong><br />'
       . $content . '<br />'
       . '<br />tel: <a href="tel:+49' . str_replace(' ','', $tel) . '">' . '0' . $tel . '</a> <br />' 
       . '<a href="mailto:' . $email . '">' . $email . '</a>'
