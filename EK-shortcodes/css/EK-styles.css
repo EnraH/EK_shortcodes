@@ -23,3 +23,9 @@ div.EK-latest-content {
   padding-bottom: 10px;
 }
 
+div.EK-detailed-contact {
+  padding: 10pt;
+  //position
+  border-top: 1.5px solid #000;
+  border-bottom: 1.5px solid #000;
+}

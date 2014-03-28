@@ -36,9 +36,22 @@ function add_detailed_contact($atts, $content)
     'img_id' => '',
   ), $atts));
 
+  if ($name == 'No Name given') 
+  {
+    return($name);
+  } else {
+    return '<div id="Contact_Details_' . str_replace(' ', '_', $name) . '" class="EK_detailed_contact">'
+      . get_image_tag($img_id,$name,$name, 'left', 'thumbnail') 
+      . '<em>' . $pos. '</em><br />' 
+      . $name . '<br />'
+      . $content . '<br />'
+      . '<br />tel: <a href="tel:+49' . str_replace(' ','', $tel) . '">' . '0' . $tel . '</a> <br />' 
+      . '<a href="mailto:' . $email . '">' . $email . '</a>'
+      . '</div>';
+  }
   
 }
-add_shortcode('EK_add_detailed_contact','')
+add_shortcode('EK_add_detailed_contact','add_detailed_contact');
 
 function get_latest_posts_in_cat($atts)
 {
