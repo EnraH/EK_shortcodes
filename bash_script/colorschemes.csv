@@ -1,4 +1,5 @@
 id, name, background, highlighted1, highlighted2, highlighted3
+0, original, #000, #24890d, #41a62a, #55d737
 1, standard_blue, #000, #005e7e, #1a657e, #3e6e7e
 2, blue_complement, #005e7e, #7e1900, #7e1900, #7e1900
 3, blue_complement_inverted, #7e1900, #005e7e, #1a657e, #3e6e7e

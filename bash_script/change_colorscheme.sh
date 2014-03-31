@@ -1,22 +1,11 @@
-#!/bin/sh
-
+#!/bin/bash
+# generate a new style sheet with new colors
 cp style.css style.css.bak."$(date +%s%N)"
-#new_background_color="#008373"
-new_background_color="#122324" # official blue
 
+line=$(($1+2))
+new_colors=( $( sed 's/,//g;'"$line"'q;d' colorschemes.csv ) )
+old_colors=( $( sed 's/,//g;1q;d' colorschemes.csv ) )
 
-# dark green in original template
-old_green_1="#24890d"
-#new_color_1="#830000"
-new_color_1="#005e7e" 
-# light green in original template
-old_green_2="#41a62a"
-#new_color_2="#a31b1b"
-new_color_2="#1a657e"
-
-old_green_3="#55d737"
-#new_color_3="#a31b1b"
-new_color_3="#3e6e7e"
 
 # set background colors
 
