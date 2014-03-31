@@ -1,10 +1,16 @@
 #!/bin/bash
 # generate a new style sheet with new colors
-cp style.css style.css.bak."$(date +%s%N)"
+if [ -e style.css.original ]
+  then
+    cp style.css style.css.bak."$(date +%s%N)"
+    cp style.css.original style.css
+  else
+    cp style.css style..css.original
+fi
 
 line=$(($1+2))
 new_colors=( $( sed 's/,//g;'"$line"'q;d' colorschemes.csv ) )
-old_colors=( $( sed 's/,//g;1q;d' colorschemes.csv ) )
+old_colors=( $( sed 's/,//g;2q;d' colorschemes.csv ) )
 
 # set background colors
 
