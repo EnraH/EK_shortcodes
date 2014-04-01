@@ -5,7 +5,7 @@ EK_codes
 
 Contains scripts to alter style.css in theme twentyfourteen in order to set colors of hightlighted content and background
 
-Use the table colorscheme.csv to define a new colorschmeme. To change the colorscheme execute
+Use the table colorscheme.csv to define a new colorschmeme. To change the colorscheme copy change_colorscheme.sh and colorscheme.csv into wp-content/themes/twentyfourteen/ and execute
 
 > bash change_colorscheme.sh id
 
