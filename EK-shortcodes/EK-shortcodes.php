@@ -85,6 +85,15 @@ function get_latest_posts_in_cat($atts)
 }
 add_shortcode('EK_latest_posts_in_cat','get_latest_posts_in_cat');
 
+function add_sermon($atts, $content = null)
+{
+  extract(shortcode_atts(array(
+    'Titel' => '',
+    'Predigtstelle' => '',
+  ), $atts));
+
+}
+add_shortcode('EK_predigt','add_sermon');
 
 add_action( 'wp_enqueue_scripts', 'register_plugin_styles' );
 
