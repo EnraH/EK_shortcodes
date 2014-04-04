@@ -88,10 +88,15 @@ add_shortcode('EK_latest_posts_in_cat','get_latest_posts_in_cat');
 function add_sermon($atts, $content = null)
 {
   extract(shortcode_atts(array(
-    'Titel' => '',
-    'Predigtstelle' => '',
+    'datum' => '',
+    'prediger' => 'Andreas Hansen',
+    'situation' => '',
+    'predigttext' => '',
   ), $atts));
-
+  
+  echo '<p class="EK_predigt_intro">Predigt am ' . $datum . ' von ' . $prediger . '</p>'
+        . '<p class="EK_predigt_situation">' . $situation . '</p>'
+        . str_replace('<br />', '', apply_filters('the_content', $content));
 }
 add_shortcode('EK_predigt','add_sermon');
 
