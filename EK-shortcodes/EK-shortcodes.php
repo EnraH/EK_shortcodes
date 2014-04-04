@@ -91,12 +91,23 @@ function add_sermon($atts, $content = null)
     'datum' => '',
     'prediger' => 'Andreas Hansen',
     'situation' => '',
-    'predigttext' => '',
+    'bibelstelle' => '',
+    'uebersetzung' => 'LU',
   ), $atts));
   
-  echo '<p class="EK_predigt_intro">Predigt am ' . $datum . ' von ' . $prediger . '</p>'
-        . '<p class="EK_predigt_situation">' . $situation . '</p>'
-        . str_replace('<br />', '', apply_filters('the_content', $content));
+  echo '<p class="EK-predigt-intro">Predigt am ' . $datum . ' von ' . $prediger;
+  if ($bibelstelle != '')
+  {
+    echo ' über <a target="_blank" href="http://www.die-bibel.de/bibelstelle/' . $bibelstelle . '/' . $uebersetzung . '">' . $bibelstelle . '</a>'; 
+  }
+
+  echo  '</p>';
+
+  if ($situation != '')
+  {
+    echo '<p class="EK-predigt-situation">' . $situation . '</p>';
+  }
+  echo  str_replace('<br />', '', apply_filters('the_content', $content));
 }
 add_shortcode('EK_predigt','add_sermon');
 

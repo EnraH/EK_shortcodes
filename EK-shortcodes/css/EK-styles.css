@@ -31,3 +31,14 @@ div.EK-detailed-contact {
   width: 200px;
   float:right;
 }
+
+p.EK-predigt-intro {
+  //font-size: 12px;
+  color: #767676;
+  font-weight: 700;
+  //text-transform: uppercase;
+}
+
+p.EK-predigt-situation {
+  font-style: italic;
+}
