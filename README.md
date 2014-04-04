@@ -15,5 +15,27 @@ id: id of the colorscheme in table
 
 Wordpress shortcodes
 
-* inclusion of contact details
-* embedding of latest posts of one category
+### inclusion of contact details
+
+> [EK_add_contact name="" tel="" email="" pos="" img_id=""]
+
+### embedding of latest posts of one category
+
+> [EK_latest_posts_in_cat numberposts="" category=""]
+
+### styling of sermons
+
+> [EK_predigt datum="1.3.14" bibelstelle="Mk1,1-17" situation="Die Predigt ist in den Gottesdienst eingebettet"] sermon [/EK_predigt]
+
+attributes 
+
+* datum
+* prediger (default: Andreas Hansen)
+* bibelstelle (optional, Bibelstelle als Kürzel): erstellt link auf
+entsprechende Seite von die-bibel.de
+* uebersetzung (optional, default: LU): wählt Übersetzung für
+Bibelstellenlink (siehe
+http://www.die-bibel.de/online-bibeln/link-service/bibel-link-service/)
+* situtation (optional)
+
+The shortcode removes all (single) linebreaks. Double linebreaks are turned into paragraphs.
