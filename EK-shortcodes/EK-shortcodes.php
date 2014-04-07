@@ -85,6 +85,10 @@ function get_latest_posts_in_cat($atts)
 }
 add_shortcode('EK_latest_posts_in_cat','get_latest_posts_in_cat');
 
+/**
+  * Shortcode for sermons --> guarantees unified design
+  *
+  */
 function add_sermon($atts, $content = null)
 {
   extract(shortcode_atts(array(
@@ -101,7 +105,7 @@ function add_sermon($atts, $content = null)
     echo ' über <a target="_blank" href="http://www.die-bibel.de/bibelstelle/' . $bibelstelle . '/' . $uebersetzung . '">' . $bibelstelle . '</a>'; 
   }
 
-  echo  '</p>';
+  echo  '</p> <!--more-->';
 
   if ($situation != '')
   {
@@ -113,9 +117,13 @@ add_shortcode('EK_predigt','add_sermon');
 
 add_action( 'wp_enqueue_scripts', 'register_plugin_styles' );
 
+
+
 /**
  * Register style sheet.
   */
+
+
 function register_plugin_styles() 
 {
   wp_register_style( 'EK-shortcodes', plugins_url( 'EK-shortcodes/css/EK-styles.css' ) );
